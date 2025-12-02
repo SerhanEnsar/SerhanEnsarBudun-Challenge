@@ -76,7 +76,7 @@ export default function SharedObjects({ refreshKey, setRefreshKey }: RefreshProp
     
     const tx = buyHero(packageId, listHeroId, price);
     signAndExecute(
-      { transaction: tx },
+      { transaction: tx as any},
       {
         onSuccess: async ({ digest }) => {
           await suiClient.waitForTransaction({
@@ -104,7 +104,7 @@ export default function SharedObjects({ refreshKey, setRefreshKey }: RefreshProp
     
     const tx = delist(packageId, listHeroId, adminCapId);
     signAndExecute(
-      { transaction: tx },
+      { transaction: tx as any},
       {
         onSuccess: async ({ digest }) => {
           await suiClient.waitForTransaction({
@@ -132,7 +132,7 @@ export default function SharedObjects({ refreshKey, setRefreshKey }: RefreshProp
     
     const tx = changePrice(packageId, listHeroId, price, adminCapId);
     signAndExecute(
-      { transaction: tx },
+      { transaction: tx as any},
       {
         onSuccess: async ({ digest }) => {
           await suiClient.waitForTransaction({

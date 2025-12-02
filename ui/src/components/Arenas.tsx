@@ -95,7 +95,7 @@ export default function Arenas({ refreshKey, setRefreshKey }: RefreshProps) {
 
     const tx = battle(packageId, heroId, arenaId);
     signAndExecute(
-      { transaction: tx },
+      { transaction: tx as any },
       {
         onSuccess: async ({ digest }) => {
           await suiClient.waitForTransaction({

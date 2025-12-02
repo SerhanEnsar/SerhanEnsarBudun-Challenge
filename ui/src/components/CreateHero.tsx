@@ -23,7 +23,7 @@ export function CreateHero({ refreshKey, setRefreshKey }: RefreshProps) {
     
     const tx = createHero(packageId, name, imageUrl, power);
     signAndExecute(
-      { transaction: tx },
+      { transaction: tx as any},
       {
         onSuccess: async ({ digest }) => {
           await suiClient.waitForTransaction({

@@ -50,7 +50,7 @@ export function WalletStatus() {
     
     const tx = transferAdminCap(adminCapId, transferAdminAddress);
     signAndExecute(
-      { transaction: tx },
+      { transaction: tx as any},
       {
         onSuccess: async ({ digest }) => {
           await suiClient.waitForTransaction({

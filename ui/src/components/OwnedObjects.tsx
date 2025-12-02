@@ -78,7 +78,7 @@ export function OwnedObjects({ refreshKey, setRefreshKey }: RefreshProps) {
 
     const tx = transferHero(heroId, address);
     signAndExecute(
-      { transaction: tx },
+      { transaction: tx as any},
       {
         onSuccess: async ({ digest }) => {
           await suiClient.waitForTransaction({
@@ -107,7 +107,7 @@ export function OwnedObjects({ refreshKey, setRefreshKey }: RefreshProps) {
 
     const tx = listHero(packageId, heroId, price);
     signAndExecute(
-      { transaction: tx },
+      { transaction: tx as any},
       {
         onSuccess: async ({ digest }) => {
           await suiClient.waitForTransaction({
@@ -136,7 +136,7 @@ export function OwnedObjects({ refreshKey, setRefreshKey }: RefreshProps) {
 
     const tx = createArena(packageId, heroId);
     signAndExecute(
-      { transaction: tx },
+      { transaction: tx as any},
       {
         onSuccess: async ({ digest }) => {
           await suiClient.waitForTransaction({
